@@ -41,6 +41,7 @@ filepath_training_inertial_files <- file.path(
   filepath_training_files,"Inertial Signals"
 )
 
+
 ################################################################################
 # 2. Read in and clean training and testing files
 ################################################################################
@@ -185,6 +186,8 @@ training_and_testing_averages <- mean_and_stdev %>%
   group_by(subject_id, activity, feature) %>%
   summarise(average = mean(value), .groups = "drop")
 View(training_and_testing_averages)
+
+
 
 ################################################################################
 # 4. Output final data set
