@@ -185,3 +185,9 @@ training_and_testing_averages <- mean_and_stdev %>%
   group_by(subject_id, activity, feature) %>%
   summarise(average = mean(value), .groups = "drop")
 View(training_and_testing_averages)
+
+################################################################################
+# 4. Output final data set
+################################################################################
+
+write.table(training_and_testing_averages, file = "HAR-average-results.txt", row.name=FALSE)
